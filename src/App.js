@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-// import Registration from "./components/Registration";
+import Registration from "./components/Registration";
 // import OSL from "./components/OSL";
-import ThankYou from "./components/ThankYou";
+// import ThankYou from "./components/ThankYou";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Registration /> */}
+        <Registration />
         {/* <OSL /> */}
-        <ThankYou />
+        {/* <ThankYou /> */}
       </div>
     );
   }
