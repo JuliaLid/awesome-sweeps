@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   saveRecord: function(consumerData) {
     console.log(consumerData);
-    return axios.post("/api/registration", consumerData);
+    return axios.post("/registration", consumerData);
   }
 };
 

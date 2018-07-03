@@ -13,8 +13,8 @@ export default class Registration extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({ [name]: value }, () => {
-      this.validateField(name, value);
+    this.setState({
+      [name]: value
     });
   };
 
@@ -25,7 +25,7 @@ export default class Registration extends Component {
       consumerLastName: this.state.lastName,
       consumerEmail: this.state.email
     });
-    this.props.history.push('/thankyou');
+    // this.props.history.push("/thankyou");
   };
 
   render() {
@@ -42,7 +42,7 @@ export default class Registration extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  id="firstName"
+                  name="firstName"
                   placeholder="First Name"
                   onChange={this.handleInputChange}
                 />
@@ -52,17 +52,17 @@ export default class Registration extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  id="lastName"
+                  name="lastName"
                   placeholder="Last Name"
                   onChange={this.handleInputChange}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="inputEmail">Email*</label>
+                <label htmlFor="email">Email*</label>
                 <input
                   type="email"
                   className="form-control"
-                  id="inputEmail"
+                  name="email"
                   placeholder="Email"
                   onChange={this.handleInputChange}
                 />

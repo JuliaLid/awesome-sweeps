@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Registration from "./components/Registration";
+// import { ROUTE_PATHS } from './utils/routes'
 // import OSL from "./components/OSL";
 // import ThankYou from "./components/ThankYou";
 
