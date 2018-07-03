@@ -1,19 +1,19 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => (
   <header>
     <nav className="navbar navbar-dark fixed-top bg-dark">
-      {/* <Link className="navbar-brand" to="/"> */}
+      <Link className="navbar-brand" to="/">
         {" "}
         Awesome Sweepstakes{" "}
-      {/* </Link> */}
+      </Link>
       <ul className="navbar-nav y-2 my-lg-0">
         <li className="nav-item">
-          {/* <Link className="nav-link active" to = "/"> */}
+          <Link className="nav-link active" to = "/orderstatuslookup">
             {" "}
             Check Processing Status{" "}
-          {/* </Link> */}
+          </Link>
         </li>
       </ul>
     </nav>

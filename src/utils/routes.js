@@ -2,7 +2,7 @@ export const ROUTE_PATHS = {
     BASE: '/',
     REGISTRATION: '/registration',
     CONFIRMATION: '/thankyou',
-    OSL:'/orderstatus'
+    OSL:'/orderstatuslookup'
   }
 
   //What are the official endpoints?

@@ -3,7 +3,7 @@ import Navbar from "./Landmarks/Navbar/Navbar";
 import Footer from "./Landmarks/Footer/Footer";
 import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
 
-export default class OSL extends Component {
+export default class OrderStatusLookup extends Component {
   render() {
     return (
       <div>

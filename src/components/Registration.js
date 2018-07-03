@@ -25,7 +25,7 @@ export default class Registration extends Component {
       consumerLastName: this.state.lastName,
       consumerEmail: this.state.email
     });
-    // this.props.history.push("/thankyou");
+    this.props.history.push("/thankyou");
   };
 
   render() {
