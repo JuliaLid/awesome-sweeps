@@ -2,8 +2,32 @@ import React, { Component } from "react";
 import Navbar from "./Landmarks/Navbar/Navbar";
 import Footer from "./Landmarks/Footer/Footer";
 import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
+import API from "../utils/api/RegistrationAPI";
 
 export default class Registration extends Component {
+  state: {
+    firstName: "",
+    lastName: "",
+    email: ""
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value }, () => {
+      this.validateField(name, value);
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.saveRecord({
+      consumerFirstName: this.state.firstName,
+      consumerLastName: this.state.lastName,
+      consumerEmail: this.state.email
+    });
+    this.props.history.push('/thankyou');
+  };
+
   render() {
     return (
       <div>
@@ -20,6 +44,7 @@ export default class Registration extends Component {
                   className="form-control"
                   id="firstName"
                   placeholder="First Name"
+                  onChange={this.handleInputChange}
                 />
               </div>
               <div className="form-group">
@@ -29,6 +54,7 @@ export default class Registration extends Component {
                   className="form-control"
                   id="lastName"
                   placeholder="Last Name"
+                  onChange={this.handleInputChange}
                 />
               </div>
               <div className="form-group">
@@ -38,10 +64,15 @@ export default class Registration extends Component {
                   className="form-control"
                   id="inputEmail"
                   placeholder="Email"
+                  onChange={this.handleInputChange}
                 />
               </div>
               <div className="form-group">
-                <button type="submit" className="btn btn-info">
+                <button
+                  type="submit"
+                  className="btn btn-info"
+                  onClick={this.handleFormSubmit}
+                >
                   SUBMIT
                 </button>
               </div>
