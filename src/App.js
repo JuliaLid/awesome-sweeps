@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Switch } from "react-router";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ROUTE_PATHS } from "./utils/routes";
 import Registration from "./components/Registration";
 import OrderStatusLookup from "./components/OrderStatusLookup";
