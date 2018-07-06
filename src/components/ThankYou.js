@@ -5,10 +5,13 @@ import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
 import API from "../utils/api/RegistrationAPI";
 
 export default class ThankYou extends Component {
-  state: {
-    createdAt: "July, 1",
-    submissionId: "23654568783"
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      createdAt: "July, 1",
+      submissionId: "236-545-687-983"
+    };
+  }
 
   // componentDidMount() {
   //   this.confirmRegistration()
@@ -30,13 +33,8 @@ export default class ThankYou extends Component {
         <section>
           <h2 className="text-center">THANKS FOR ENTERING</h2>
           <div className="container text-center">
-            <p>
-              Your submission was received on{" "}
-              {this.state && this.state.createdAt}
-            </p>
-            {/* <p>Your tracking number is {this.state.submissionId}</p> */}
-            <p>Your submission was received on xx/xx/xx.</p>
-            <p>Your tracking number is xxxxxxxxxx.</p>
+            <p>Your submission was received on {this.state.createdAt}.</p>
+            <p>Your tracking number is {this.state.submissionId}</p>
           </div>
         </section>
         <Footer />
