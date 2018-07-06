@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./Landmarks/Navbar/Navbar";
 import Footer from "./Landmarks/Footer/Footer";
 import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
+import API from "../utils/api/oslAPI";
 
 export default class OrderStatusLookup extends Component {
   render() {
@@ -18,7 +19,7 @@ export default class OrderStatusLookup extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  id="submissionID"
+                  name="submissionID"
                   placeholder="Submission ID"
                 />
               </div>

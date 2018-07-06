@@ -1,9 +1,12 @@
 import axios from "axios";
 
 export default {
-  saveRecord: function(consumerData) {
+  saveSubmission: function(consumerData) {
     console.log(consumerData);
     return axios.post("/registration", consumerData);
+  },
+  getSubmissionId: function (){
+    return axios.get("/thankyou");
   }
 };
 

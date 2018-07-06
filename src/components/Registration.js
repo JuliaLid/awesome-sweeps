@@ -20,7 +20,7 @@ export default class Registration extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.saveRecord({
+    API.saveSubmission({
       consumerFirstName: this.state.firstName,
       consumerLastName: this.state.lastName,
       consumerEmail: this.state.email
