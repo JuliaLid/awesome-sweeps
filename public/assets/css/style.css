@@ -4,3 +4,12 @@
       margin-top: 3rem;
     }
   }
+   
+  .error p {
+    color: #b60c00;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    border: 1px dashed #b60c00;
+    padding: 5px;
+}
