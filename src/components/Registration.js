@@ -4,6 +4,7 @@ import Footer from "./Landmarks/Footer/Footer";
 import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
 import FormErrors from "./Landmarks/FormErrors";
 // import API from "../utils/api/RegistrationAPI";
+import { generateTrackingId} from "./utils/trackingID";
 import { checkEmailFormat } from "../utils/validation";
 
 export default class Registration extends Component {
@@ -58,6 +59,7 @@ export default class Registration extends Component {
         emailValid: emailValid
       },
       this.validateForm
+      //check if there are any error messages (convert errors t an array and update ForErrors. Condition is errros.length===0, if ture, formValid is true)
     );
   }
 

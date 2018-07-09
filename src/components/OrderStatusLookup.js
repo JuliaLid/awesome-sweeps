@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./Landmarks/Navbar/Navbar";
 import Footer from "./Landmarks/Footer/Footer";
 import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
+import OrderStatus from "./OrderStatus";
 import API from "../utils/api/oslAPI";
 
 export default class OrderStatusLookup extends Component {
