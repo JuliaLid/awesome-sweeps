@@ -16,10 +16,11 @@ export default class Registration extends Component {
       formErrors: { firstName: "", lastName: "", email: "" },
       firstNameValid: false,
       lastNameValid: false,
-      emailValid: false
+      emailValid: false,
+      formValid: false
     };
   }
- 
+
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
     let firstNameValid = this.state.firstNameValid;
@@ -28,15 +29,12 @@ export default class Registration extends Component {
 
     switch (fieldName) {
       case "firstName":
-        console.log("first name check");
         firstNameValid = value.length >= 1;
-        console.log("firstNameValid");
         fieldValidationErrors.firstName = firstNameValid
           ? ""
           : " Enter your first name";
         break;
       case "lastName":
-      console.log("last name check");
         lastNameValid = value.length >= 2;
         fieldValidationErrors.lastName = lastNameValid
           ? ""
