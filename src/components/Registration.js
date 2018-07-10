@@ -4,7 +4,7 @@ import Footer from "./Landmarks/Footer/Footer";
 import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
 import FormErrors from "./Landmarks/FormErrors";
 // import API from "../utils/api/RegistrationAPI";
-import { generateTrackingId} from "./utils/trackingID";
+import { generateTrackingId } from "../utils/trackingID";
 import { checkEmailFormat } from "../utils/validation";
 
 export default class Registration extends Component {
@@ -14,6 +14,7 @@ export default class Registration extends Component {
       firstName: "",
       lastName: "",
       email: "",
+      trackingId: "",
       formErrors: { firstName: "", lastName: "", email: "" },
       firstNameValid: false,
       lastNameValid: false,
@@ -81,12 +82,18 @@ export default class Registration extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // API.saveSubmission({
-    //   consumerFirstName: this.state.firstName,
-    //   consumerLastName: this.state.lastName,
-    //   consumerEmail: this.state.email
-    // });
-    // this.props.history.push("/thankyou");
+    this.setState({ trackingId: generateTrackingId() }, () => {
+      //This is an object that will saved to the DB
+      console.log("line 94", this.state.firstName, this.state.lastName,this.state.email,this.state.trackingId); 
+      
+      // API.saveSubmission({
+      //   consumerFirstName: this.state.firstName,
+      //   consumerLastName: this.state.lastName,
+      //   consumerEmail: this.state.email,
+      //   trackingId: this.state.trackingId
+      // });
+    });
+     // this.props.history.push("/thankyou");
   };
 
   render() {
