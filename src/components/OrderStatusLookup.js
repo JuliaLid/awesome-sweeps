@@ -39,19 +39,7 @@ export default class OrderStatusLookup extends Component {
           <h2 className="text-center">LOOK UP SUBMISSION STATUS</h2>
           <div className="container">
             {orderStatus ? (
-              <div>
-                <p>
-                  Your submission was received on{" "}
-                  <strong>{this.state.createdAt}.</strong>.
-                </p>
-                <p>
-                  The current processing status is <span>
-                  <strong>{this.state.orderProcessingStatus}</strong></span>.
-                </p>
-                <p>
-                  Your prize was shipped on <strong>XX/XX/XX.</strong>.
-                </p>
-              </div>
+              <OrderStatus {...this.state.orderStatus} />
             ) : (
               <form>
                 <div className="form-group">
