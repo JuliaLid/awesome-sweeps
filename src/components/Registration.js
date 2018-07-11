@@ -51,7 +51,6 @@ export default class Registration extends Component {
       default:
         break;
     }
-
     this.setState(
       {
         formErrors: fieldValidationErrors,
@@ -59,19 +58,20 @@ export default class Registration extends Component {
         lastNameValid: lastNameValid,
         emailValid: emailValid
       },
-      this.validateForm
-      //check if there are any error messages (convert errors t an array and update ForErrors. Condition is errros.length===0, if ture, formValid is true)
+      () => {
+        if (
+          this.state.firstNameValid &&
+          this.state.lastNameValid &&
+          this.state.emailValid
+        ) {
+          //if there are no errors, form is valid and Submit button is enabled. If not, buton is disabled.
+          this.setState({ formValid: true });
+        } else {
+          this.setState({ formValid: false });
+        }
+      }
     );
   }
-
-  validateForm = () => {
-    this.setState({
-      formValid:
-        this.state.firstNameValid &&
-        this.state.lastNameValid &&
-        this.state.emailValid
-    });
-  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -84,8 +84,14 @@ export default class Registration extends Component {
     event.preventDefault();
     this.setState({ trackingId: generateTrackingId() }, () => {
       //This is an object that will saved to the DB
-      console.log("line 94", this.state.firstName, this.state.lastName,this.state.email,this.state.trackingId); 
-      
+      console.log(
+        "line 94",
+        this.state.firstName,
+        this.state.lastName,
+        this.state.email,
+        this.state.trackingId
+      );
+
       // API.saveSubmission({
       //   consumerFirstName: this.state.firstName,
       //   consumerLastName: this.state.lastName,
@@ -93,7 +99,7 @@ export default class Registration extends Component {
       //   trackingId: this.state.trackingId
       // });
     });
-     // this.props.history.push("/thankyou");
+    // this.props.history.push("/thankyou");
   };
 
   render() {
