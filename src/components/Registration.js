@@ -97,9 +97,10 @@ export default class Registration extends Component {
   render() {
     return (
       <div>
+        <wrapper className="d-flex flex-column">
         <Navbar />
         <Jumbotron />
-        <section>
+        <main className="flex-fill">
           <h2 className="text-center">ENTER FOR A CHANCE TO WIN</h2>
           <div className="container">
             <div className="error">
@@ -149,8 +150,9 @@ export default class Registration extends Component {
               </div>
             </form>
           </div>
-        </section>
+        </main>
         <Footer />
+        </wrapper>
       </div>
     );
   }

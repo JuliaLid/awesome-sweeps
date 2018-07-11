@@ -1,15 +1,8 @@
 import React from "react";
-import "./Footer.css";
 
 const Footer = () => (
-  <footer>
-    <div className="footer bg-dark">
-      <div className="container">
-        <span>
-          <p className="text-light">2018 &copy;</p>
-        </span>
-      </div>
-    </div>
+  <footer className="container-fluid w-100 bg-dark text-light py-3">
+    <p className="text-light">2018 &copy;</p>
   </footer>
 );
 

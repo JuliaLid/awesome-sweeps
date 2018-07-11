@@ -33,9 +33,10 @@ export default class OrderStatusLookup extends Component {
 
     return (
       <div>
+         <wrapper className="d-flex flex-column">
         <Navbar />
         <Jumbotron />
-        <section>
+        <main className="flex-fill">
           <h2 className="text-center">LOOK UP SUBMISSION STATUS</h2>
           <div className="container">
             {orderStatus ? (
@@ -63,8 +64,9 @@ export default class OrderStatusLookup extends Component {
               </form>
             )}
           </div>
-        </section>
+        </main>
         <Footer />
+        </wrapper>
       </div>
     );
   }
