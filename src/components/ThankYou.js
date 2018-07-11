@@ -17,6 +17,7 @@ export default class ThankYou extends Component {
   //   this.confirmRegistration()
   // };
 
+  //This is a placeholder until we hook up UI to API template. It will be refactored when redux is added for state management. 
   cofirmRegistration = () => {
     API.getSubmissionID()
       .then(res =>
@@ -31,7 +32,7 @@ export default class ThankYou extends Component {
         <Navbar />
         <Jumbotron />
         <section>
-          <h2 className="text-center">THANKS FOR ENTERING</h2>
+          <h2 className="text-center">THANKS FOR ENTERING THE AWESOME SWEEPSTAKES.</h2>
           <div className="container text-center">
             <p>Your submission was received on {this.state.createdAt}.</p>
             <p>Your tracking number is {this.state.submissionId}</p>

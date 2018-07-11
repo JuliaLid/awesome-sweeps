@@ -5,7 +5,9 @@ const FormErrors = ({ formErrors }) => (
     {Object.keys(formErrors).map((fieldName, i) => {
       if (formErrors[fieldName].length > 0) {
         return <p key={i}> *{formErrors[fieldName]}</p>;
-      } 
+      } else {
+        return '';
+      }//ESLint was throwing a warning without a secondary return statement
     })}
   </div>
 );

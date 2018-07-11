@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//This may change when API service template is hooked to UI.
 export default {
   saveSubmission: function(consumerData) {
     console.log(consumerData);
@@ -10,4 +11,3 @@ export default {
   }
 };
 
-//Is tis a handoff point to the service template????????

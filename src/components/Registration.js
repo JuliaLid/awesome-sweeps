@@ -3,7 +3,7 @@ import Navbar from "./Landmarks/Navbar/Navbar";
 import Footer from "./Landmarks/Footer/Footer";
 import Jumbotron from "./Landmarks/Jumbotron/Jumbotron";
 import FormErrors from "./Landmarks/FormErrors";
-// import API from "../utils/api/RegistrationAPI";
+import API from "../utils/api/RegistrationAPI";
 import { generateTrackingId } from "../utils/trackingID";
 import { checkEmailFormat } from "../utils/validation";
 
@@ -22,7 +22,7 @@ export default class Registration extends Component {
       formValid: false
     };
   }
-
+  //Can't extricate vaidation into a separate file since it's saving to state.
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
     let firstNameValid = this.state.firstNameValid;
@@ -83,23 +83,15 @@ export default class Registration extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.setState({ trackingId: generateTrackingId() }, () => {
-      //This is an object that will saved to the DB
-      console.log(
-        "line 94",
-        this.state.firstName,
-        this.state.lastName,
-        this.state.email,
-        this.state.trackingId
-      );
-
-      // API.saveSubmission({
-      //   consumerFirstName: this.state.firstName,
-      //   consumerLastName: this.state.lastName,
-      //   consumerEmail: this.state.email,
-      //   trackingId: this.state.trackingId
-      // });
+      //This is a placeholder until we hook up UI to API template. It assumes a return object with order status data.
+      API.saveSubmission({
+        consumerFirstName: this.state.firstName,
+        consumerLastName: this.state.lastName,
+        consumerEmail: this.state.email,
+        trackingId: this.state.trackingId
+      });
     });
-    // this.props.history.push("/thankyou");
+    this.props.history.push("/thankyou");
   };
 
   render() {

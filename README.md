@@ -1,14 +1,13 @@
 # Awesome Sweepstakes
 
 ## Overview
+
 This branch intorduces the following functionality:
-* OrderStatus Component
-    * Add prop-types to designate te data type and that what's required
-    * Replaced conditional logic in the OrderStatusLookup with the OrderStatus component
-     * Used the spread Operator to pass the order status object from state (https://reactjs.org/docs/jsx-in-depth.html#spread-attributes)
-* ID generator function 
-    * Returned ID is saved to the state
+- A utility function to return a unique alphanumeric tracking ID to the Regisration component. 
+-  A new OrderStatus component to display submission status based on the passed props.
+- Defined propTypes for props passed to Order Status.
+- Refactored OrderStatusLookup component to render the new OrderStatus component in the conditional statement.
+- Using a spread operator to pass the order status object from OrderStatusLookup to OrderSatus.
+- Refactored how the form's validity state is updated on change to enable or disable the `Submit` button.
 
 
-## Process Steps
-1.

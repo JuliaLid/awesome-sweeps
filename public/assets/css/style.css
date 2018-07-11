@@ -1,15 +1,29 @@
+/* html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 40px; /* Margin bottom by footer height */
+/* } */
+body,
+wrapper {
+  min-height: 100vh;
+}
+.flex-fill {
+  flex: 1 1 auto;
+}
+.error p {
+  color: #b60c00;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  border: 1px dashed #b60c00;
+  padding: 5px;
+}
+
 @media (min-width: 1200px) {
-    section .container {
-      max-width: 500px;
-      margin-top: 3rem;
-    }
+  section .container {
+    max-width: 500px;
+    margin-top: 3rem;
   }
-   
-  .error p {
-    color: #b60c00;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 16px;
-    border: 1px dashed #b60c00;
-    padding: 5px;
 }

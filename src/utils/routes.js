@@ -5,4 +5,3 @@ export const ROUTE_PATHS = {
     OSL:'/orderstatuslookup'
   }
 
-  //What are the official endpoints?

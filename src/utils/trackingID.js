@@ -43,6 +43,7 @@ const getRandomCharacter = () => {
   return randomCharacter;
 };
 
+//Tracking ID is imported to the Registration component.
 export const generateTrackingId = () => {
   let trackingIdGenerator = [];
   for (let i = 0; i <= 13; i++) {

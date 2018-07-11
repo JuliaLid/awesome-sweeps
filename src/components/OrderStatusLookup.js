@@ -20,7 +20,7 @@ export default class OrderStatusLookup extends Component {
       [name]: value
     });
   };
-
+  //This is a placeholder until we hook up UI to API template. It assumes a return object with order status data.
   handleFormSubmit = id => {
     API.lookUpOrderStatus(id)
       .then(res => this.setState({ trackingID: " ", orderStatus: res.data }))
